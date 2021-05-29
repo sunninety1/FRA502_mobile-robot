@@ -23,3 +23,7 @@ s: Force stop the robot.
 To use the my_ros_robot_teleop package, the syntax is as follows:
 
     roslaunch my_ros_robot_teleop teleop_key.launch 
+    
+You can install this project by entering this command
+
+    git clone https://github.com/sunninety1/FRA502_mobile-robot.git
