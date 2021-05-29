@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="my_ros_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+	<!-- This file is for assembly robot parts from xacro files -->
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/chassis_stl.xacro"/>
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/wheel_stl.xacro"/>
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/properties.xacro"/>
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/gazebo_prop.xacro"/>
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/sensor.xacro"/>
+	
+	<xacro:body/>
+
+	<xacro:wheel 
+		name="left" 
+		translation="0 0 -0.1425" 
+		rotation="-3.14 0 0" 
+		parent="base_link"/>
+
+	<xacro:wheel 
+		name="right" 
+		translation="0 0 0.1425" 
+		rotation="-3.14 0 0" 
+		parent="base_link"/>
+
+	
+</robot>

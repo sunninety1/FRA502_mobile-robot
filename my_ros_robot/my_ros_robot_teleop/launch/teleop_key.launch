@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Create a node for keyboard teleoperation. -->
+    <node pkg="my_ros_robot_teleop" type="my_ros_teleop_key.py" name="my_ros_robot_teleop"  output="screen">
+    </node>
+    
+</launch>

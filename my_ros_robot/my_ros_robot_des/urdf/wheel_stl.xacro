@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name = "wheel" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/properties.xacro"/>	
+	
+	<!-- you can include this xacro file by setting 4 paramters.  -->
+	<!-- name: Name of your wheel -->
+	<!-- translation: The translation in xyz frame reference to the wheel's parent link frame. -->
+	<!-- rotation: The rotation in roll, pitch and yaw angle(rad) reference to the wheel's parent link frame. -->
+	<!-- parent: The wheel's parent link name. -->
+	
+	<xacro:macro name="wheel" params="name translation rotation parent">
+
+		<joint name="${name}_wheel_joint" type="continuous">
+			<origin xyz="${translation}" rpy="${rotation}"/>
+			<parent link="${parent}"/>
+			<child link="${name}_wheel"/>
+			<axis xyz="0 0 1"/>
+		</joint>
+		<link name="${name}_wheel">
+			<inertial>
+				<origin rpy="0 0 0" xyz="${WHEEL_COM}"/>
+				<mass value="${WHEEL_M}"/>
+				<inertia ixx="${WHEEL_Ixx}" iyy="${WHEEL_Iyy}" izz="${WHEEL_Izz}" ixz="${WHEEL_Izx}" ixy="${WHEEL_Ixy}" iyz="${WHEEL_Iyz}"/> 
+			</inertial>
+
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://my_ros_robot_des/meshes/wheel.STL" scale="1 1 1"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<cylinder length="0.025" radius="0.035"/>
+				</geometry>
+			</collision>
+		</link>
+
+        <gazebo reference="${name}_wheel">
+            <mu1>1</mu1>
+            <mu2>1</mu2>
+            <kp>500000.0</kp>
+            <kd>10.0</kd>
+            <minDepth>0.001</minDepth>
+            <maxVel>0.1</maxVel>
+            <fdir1>1 0 0</fdir1>
+            <material>Gazebo/FlatBlack</material>
+	    </gazebo>		
+
+	</xacro:macro>
+</robot>

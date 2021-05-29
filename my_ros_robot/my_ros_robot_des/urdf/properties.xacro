@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	
+	<xacro:property name="PI" value="3.145926535897931"/>
+	<xacro:property name="WHEEL_RADIUS" value="0.07"/>
+	
+	<!-- joint properties-->
+	<xacro:property name="U_MAX" value="10.0"/>
+	<xacro:property name="V_MAX" value="20.0"/>
+	<xacro:property name="WHEEL_JOINT_DAMP" value="0.3"/>
+	<xacro:property name="WHEEL_SEPERATION" value="0.1425"/>
+	
+	<!--inertial-->
+	<xacro:property name="CHASSIS_COM" value="-0.05684899 -0.00114451 0"/>
+	<xacro:property name="CHASSIS_Ixx" value="0.01118174"/>
+	<xacro:property name="CHASSIS_Iyy" value="0.01866085"/>
+	<xacro:property name="CHASSIS_Izz" value="0.00862067"/>
+	<xacro:property name="CHASSIS_Izx" value="0.0"/>
+	<xacro:property name="CHASSIS_Ixy" value="0.0"/>
+	<xacro:property name="CHASSIS_Iyz" value="0.0"/>
+	<xacro:property name="CHASSIS_M" value="3"/>
+	
+	<xacro:property name="WHEEL_COM" value="0 0 0"/>
+	<xacro:property name="WHEEL_Ixx" value="0.0010506258"/>
+	<xacro:property name="WHEEL_Iyy" value="0.0010506258"/>
+	<xacro:property name="WHEEL_Izz" value="0.0018029481"/>
+	<xacro:property name="WHEEL_Izx" value="0.0"/>
+	<xacro:property name="WHEEL_Ixy" value="0.0"/>
+	<xacro:property name="WHEEL_Iyz" value="0.0"/>
+	<xacro:property name="WHEEL_M" value="0.3"/>
+
+	<xacro:property name="CASTER_COM" value="0 0 0"/>
+	<xacro:property name="CASTER_Ixx" value="0.00000127"/>
+	<xacro:property name="CASTER_Iyy" value="0.00000127"/>
+	<xacro:property name="CASTER_Izz" value="0.00000127"/>
+	<xacro:property name="CASTER_Izx" value="0.0"/>
+	<xacro:property name="CASTER_Ixy" value="0.0"/>
+	<xacro:property name="CASTER_Iyz" value="0.0"/>
+	<xacro:property name="CASTER_M" value="0.01414"/>
+</robot>

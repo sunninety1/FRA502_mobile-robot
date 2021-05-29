@@ -1,0 +1,32 @@
+Mass properties of chassis
+     Configuration: Default
+     Coordinate system: Coordinate System1
+
+Mass (user-overridden) = 3.00000000 kilograms
+
+Volume = 0.00169504 cubic meters
+
+Surface area = 0.10412321 square meters
+
+Center of mass: ( meters )
+	X = -0.05684899
+	Y = -0.00114451
+	Z = 0.00000000
+
+Principal axes of inertia and principal moments of inertia: ( kilograms * square meters )
+Taken at the center of mass.
+	 Ix = ( 0.00000000,  0.00000000,  1.00000000)   	Px = 0.00862067
+	 Iy = ( 0.99999891, -0.00147407,  0.00000000)   	Py = 0.01118172
+	 Iz = ( 0.00147407,  0.99999891,  0.00000000)   	Pz = 0.01866087
+
+Moments of inertia: ( kilograms * square meters )
+Taken at the center of mass and aligned with the output coordinate system.
+	Lxx = 0.01118174	Lxy = -0.00001102	Lxz = 0.00000000
+	Lyx = -0.00001102	Lyy = 0.01866085	Lyz = 0.00000000
+	Lzx = 0.00000000	Lzy = 0.00000000	Lzz = 0.00862067
+
+Moments of inertia: ( kilograms * square meters )
+Taken at the output coordinate system.
+	Ixx = 0.01118567	Ixy = 0.00018417	Ixz = 0.00000000
+	Iyx = 0.00018417	Iyy = 0.02835627	Iyz = 0.00000000
+	Izx = 0.00000000	Izy = 0.00000000	Izz = 0.01832002

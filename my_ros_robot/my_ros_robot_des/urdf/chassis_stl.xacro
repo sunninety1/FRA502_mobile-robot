@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot name = "myrobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find my_ros_robot_des)/urdf/properties.xacro"/>
+
+	<!-- <xacro:include filename="$(find my_ros_robot_des)/urdf/gazebo_prop.xacro"/> -->
+		
+	<xacro:macro name="body" params="">
+		<link name="base_footprint"/>
+		
+		<joint name="base_footprint_to_baselink" type="fixed">
+			<parent link="base_footprint"/>
+			<child link="base_link"/>
+			<origin rpy="1.57 0 0" xyz="0 0 0.035"/>
+		</joint>
+		
+		<!-- create robot main body link -->
+		<link name="base_link">
+
+			<inertial>
+				<origin rpy="0 0 0" xyz="${CHASSIS_COM}"/>
+				<mass value="${CHASSIS_M}"/>
+				<inertia ixx="${CHASSIS_Ixx}" iyy="${CHASSIS_Iyy}" izz="${CHASSIS_Izz}" 
+							ixz="${CHASSIS_Izx}" ixy="${CHASSIS_Ixy}" iyz="${CHASSIS_Iyz}"/> 
+			</inertial>
+			
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://my_ros_robot_des/meshes/chassis.STL" scale="1 1 1"/>
+				</geometry>
+			</visual>
+			
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://my_ros_robot_des/meshes/chassis.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+		
+		</link>
+
+		<gazebo reference="base_link">
+    		<material>Gazebo/Orange</material>
+  		</gazebo>
+		
+		<joint name="base_link_to_caster" type="fixed">
+			<parent link="base_link"/>
+			<child link="caster"/>
+			<origin rpy="0 0 0" xyz="-0.11 -0.02 0"/>
+		</joint>
+		
+		<!-- create robot's caster  -->
+		<link name="caster">
+
+			<inertial>
+				<origin rpy="0 0 0" xyz="${CASTER_COM}"/>
+				<mass value="${CASTER_M}"/>
+				<inertia ixx="${CASTER_Ixx}" iyy="${CASTER_Iyy}" izz="${CASTER_Izz}" 
+							ixz="${CASTER_Izx}" ixy="${CASTER_Ixy}" iyz="${CASTER_Iyz}"/> 
+			</inertial>
+
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://my_ros_robot_des/meshes/caster.STL" scale="1 1 1"/>>
+				</geometry>
+			</visual>		
+
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<sphere radius="0.015"/> 
+				</geometry>
+			</collision>	
+				
+		</link>
+		
+		<gazebo reference="caster">
+			<mu1>0.1</mu1>
+			<mu2>0.1</mu2>
+			<material>Gazebo/FlatBlack</material>
+		</gazebo>
+
+		<!-- <joint name="base_link_to_camera" type="fixed">
+			<parent link="base_link"/>
+			<child link="camera_link"/>
+			<origin rpy="-1.57 0 0" xyz="0.02 0 0"/>
+		</joint>
+
+		<link name="camera_link"/> -->
+		
+		
+	</xacro:macro>
+
+</robot>
