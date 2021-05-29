@@ -6,13 +6,13 @@ You can see the robot's camera view and laser scan via RViz.
 
 To simulate the robot in Gazebo and visualize in RViz,the syntax is as follows:
 
-  roslaunch my_ros_robot_des gazebo_room.launch
+    roslaunch my_ros_robot_des gazebo_room.launch
 
 You can control the robot by using keyboard keys via my_ros_robot_teleop package.
         
-        w
-   a    s    d
-        x
+          w
+     a    s    d
+          x
 
 w: Increase the robot's linear velocity in x direction.
 x: Increase the robot's linear velocity in -x direction.
@@ -22,4 +22,4 @@ s: Force stop the robot.
 
 To use the my_ros_robot_teleop package, the syntax is as follows:
 
-  roslaunch my_ros_robot_teleop teleop_key.launch 
+    roslaunch my_ros_robot_teleop teleop_key.launch 
