@@ -21,7 +21,7 @@ Then, create an src folder and this project will be installed in the src folder.
 
 3.Get into the src folder.
 
-    `cd src
+    cd src
    
 4.Clone this git.
 
