@@ -20,7 +20,7 @@
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/my_ros_robot_teleop</url> -->
-
+  <url type="repository">https://github.com/sunninety1/FRA502_mobile-robot.git</url>
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
   <!-- Authors do not have to be maintainers, but could be -->
